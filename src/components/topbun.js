@@ -2,11 +2,15 @@ import Components from "./index";
 import React from "react";
 
 export default props => {
+  let styles = {
+    fill: props.content.TopBunColour
+  };
+
   return (
     <div className="top-bun">
       <div className="top-bun__container">
         <div
-          style={{ fill: props.content.TopBunColour }}
+          style={styles}
           dangerouslySetInnerHTML={{ __html: props.content.TopBun }}
         />
       </div>
