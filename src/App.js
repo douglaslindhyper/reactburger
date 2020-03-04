@@ -23,7 +23,6 @@ const QUERY_STORYBLOK = gql`
 
 function App() {
   const { loading, data } = useQuery(QUERY_STORYBLOK);
-  console.log(data);
 
   if (data === undefined) return <p className="loading">loading...</p>;
 

@@ -14,20 +14,16 @@ export default props => {
     setCheeseSlices([...cheeseSlices, cheeseSlice]);
   };
 
-  return (
+  return cheeseSlices.map(cheese => (
     <div className="cheese">
       <div className="cheese__container">
-        {cheeseSlices.map(cheese => {
-          return (
-            <img
-              src={cheese}
-              onClick={() => {
-                addSlice();
-              }}
-            />
-          );
-        })}
+        <img
+          src={cheese}
+          onClick={() => {
+            addSlice();
+          }}
+        />
       </div>
     </div>
-  );
+  ));
 };
