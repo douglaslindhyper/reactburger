@@ -1,4 +1,3 @@
-import Components from "./index";
 import React, { useEffect, useRef } from "react";
 
 export default props => {
@@ -6,21 +5,23 @@ export default props => {
   useEffect(() => {
     var elem = vegetablesRef;
 
-    var flkty = new window.Flickity(vegetablesRef.current, {
-      // options
-      cellAlign: "left",
-      contain: true,
-      pageDots: false,
-      prevNextButtons: false,
-      wrapAround: true
-    });
+    setTimeout(() => {
+      var flkty = new window.Flickity(vegetablesRef.current, {
+        // options
+        cellAlign: "left",
+        contain: true,
+        pageDots: false,
+        prevNextButtons: false,
+        wrapAround: true
+      });
+    }, 100);
   }, []);
 
   return (
     <div className="vegetables">
       <div className="vegetables__container main-carousel" ref={vegetablesRef}>
-        {props.content.vegetables.map(image => (
-          <img className="carousel-cell" src={image.filename} />
+        {props.content.vegetables.map((image, index) => (
+          <img key={index} className="carousel-cell" src={image.filename} />
         ))}
       </div>
     </div>

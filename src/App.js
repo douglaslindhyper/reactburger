@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 
-import { Query } from "react-apollo";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 
@@ -22,7 +21,7 @@ const QUERY_STORYBLOK = gql`
 `;
 
 function App() {
-  const { loading, data } = useQuery(QUERY_STORYBLOK);
+  const { data } = useQuery(QUERY_STORYBLOK);
 
   if (data === undefined) return <p className="loading">loading...</p>;
 
